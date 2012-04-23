@@ -15,16 +15,6 @@ namespace CourseSchedulerSW
         private Classroom prefferedClassroom;
         public List<Schedule> hourList { get; set; }
 
-        private bool mutateHour()
-        {
-            return false;
-        }
-
-        private bool mutateClassroom()
-        {
-            return false;
-        }
-
         protected int calcPenaltyPrefRoom() //2
         {
             return 0;

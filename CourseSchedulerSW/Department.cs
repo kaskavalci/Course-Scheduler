@@ -8,7 +8,8 @@ namespace CourseSchedulerSW
     public class Department
     {
         private List<Curriculum> ListCurriculum;
-        private int DayStartTime, DayEndTime;
+        static public int dayStartTime;
+        static public int dayEndTime;
 
         public Faculty Faculty
         {
@@ -22,6 +23,7 @@ namespace CourseSchedulerSW
             }
         }
 
+        /* eger section saati güne sığmıyorsa bölmemiz lazım */
         private bool initCurriculum()
         {
             return false;
