@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CourseSchedulerSW.CourseSchedulerEntities" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBgEAEEEAAAAAAAAAQEBEAAAAggYAACA4CsgBAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.CLASSROOM" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgABQBAAgBAAAAgQAAAgAAAAgAAIAAGAAQAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.COURSE" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQBAoIAEAAAAABgAAgBLAAAggCAEAgAACAZAIAwUBI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.DEPARTMENT" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIQAAABAAiAAAAAAGAGIQAAAgIAAAAAAIQAQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.DEPARTMENTCOURSE" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAAAAAAAAAgEAAAAAACAAAAIAgCIIAAkgQAAEAAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.FACULTY" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAQACQAgAAAAAAAgAAAQEggAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.PROFESSOR" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAgAAIAEAAgAAQAACAAAABAAAAAAAAAAAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.PROFESSORSECTION" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VAAAAlAIARAIAIAiAAQAAAAABgAGgAAAABAAAAIAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.SECTION" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAEAAAAAAAAAACAgAAAAAAAIAgkAAAAEABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Form1" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Program" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Properties.Resources" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Curriculum">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="CourseSchedulerSW.Curriculum.semester" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Curriculum.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Curriculum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Faculty">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Faculty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Classroom">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAABAAAAAAAAAAAAAAAAAAAACAIAAAAAABAAAAA=</HashCode>
+      <FileName>Classroom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Proffesor">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAYAAAgAAIAAAAAAQAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Prof.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Department">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgFAAQAAAAIAAAIAAAABAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Department.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Faculty" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseSchedulerSW.Course">
+    <Position X="12" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAYAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseSchedulerSW.Section">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAASAAAgAAAAAQARAAAAAAgCgAAAEQAAAIAAQQ=</HashCode>
+      <FileName>Section.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

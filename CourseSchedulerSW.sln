@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseSchedulerSW", "CourseSchedulerSW\CourseSchedulerSW.csproj", "{6582A018-4E47-4115-B8C5-B4B75DD9C1E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6582A018-4E47-4115-B8C5-B4B75DD9C1E7}.Debug|x86.ActiveCfg = Debug|x86
+		{6582A018-4E47-4115-B8C5-B4B75DD9C1E7}.Debug|x86.Build.0 = Debug|x86
+		{6582A018-4E47-4115-B8C5-B4B75DD9C1E7}.Release|x86.ActiveCfg = Release|x86
+		{6582A018-4E47-4115-B8C5-B4B75DD9C1E7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

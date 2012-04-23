@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CourseSchedulerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CourseSchedulerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLASSROOM" EntityType="CourseSchedulerModel.CLASSROOM" />
+    <EntitySet Name="COURSE" EntityType="CourseSchedulerModel.COURSE" />
+    <EntitySet Name="DEPARTMENT" EntityType="CourseSchedulerModel.DEPARTMENT" />
+    <EntitySet Name="DEPARTMENTCOURSE" EntityType="CourseSchedulerModel.DEPARTMENTCOURSE" />
+    <EntitySet Name="FACULTY" EntityType="CourseSchedulerModel.FACULTY" />
+    <EntitySet Name="PROFESSOR" EntityType="CourseSchedulerModel.PROFESSOR" />
+    <EntitySet Name="PROFESSORSECTION" EntityType="CourseSchedulerModel.PROFESSORSECTION" />
+    <EntitySet Name="SECTION" EntityType="CourseSchedulerModel.SECTION" />
+    <AssociationSet Name="FK_CLASSROOM_FACULTY" Association="CourseSchedulerModel.FK_CLASSROOM_FACULTY">
+      <End Role="FACULTY" EntitySet="FACULTY" />
+      <End Role="CLASSROOM" EntitySet="CLASSROOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COURSE_DEPARTMENT" Association="CourseSchedulerModel.FK_COURSE_DEPARTMENT">
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENT" />
+      <End Role="COURSE" EntitySet="COURSE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPARTMENTCOURSE_COURSE" Association="CourseSchedulerModel.FK_DEPARTMENTCOURSE_COURSE">
+      <End Role="COURSE" EntitySet="COURSE" />
+      <End Role="DEPARTMENTCOURSE" EntitySet="DEPARTMENTCOURSE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SECTION_COURSE" Association="CourseSchedulerModel.FK_SECTION_COURSE">
+      <End Role="COURSE" EntitySet="COURSE" />
+      <End Role="SECTION" EntitySet="SECTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPARTMENT_FACULTY" Association="CourseSchedulerModel.FK_DEPARTMENT_FACULTY">
+      <End Role="FACULTY" EntitySet="FACULTY" />
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPARTMENTCOURSE_DEPARTMENT" Association="CourseSchedulerModel.FK_DEPARTMENTCOURSE_DEPARTMENT">
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENT" />
+      <End Role="DEPARTMENTCOURSE" EntitySet="DEPARTMENTCOURSE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROFESSORSECTION_PROFESSOR" Association="CourseSchedulerModel.FK_PROFESSORSECTION_PROFESSOR">
+      <End Role="PROFESSOR" EntitySet="PROFESSOR" />
+      <End Role="PROFESSORSECTION" EntitySet="PROFESSORSECTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROFESSORSECTION_SECTION" Association="CourseSchedulerModel.FK_PROFESSORSECTION_SECTION">
+      <End Role="SECTION" EntitySet="SECTION" />
+      <End Role="PROFESSORSECTION" EntitySet="PROFESSORSECTION" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CLASSROOM">
+    <Key>
+      <PropertyRef Name="CLRO_ID" />
+    </Key>
+    <Property Name="CLRO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLRO_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CLRO_FACULTYID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FACULTY" Relationship="CourseSchedulerModel.FK_CLASSROOM_FACULTY" FromRole="CLASSROOM" ToRole="FACULTY" />
+  </EntityType>
+  <EntityType Name="COURSE">
+    <Key>
+      <PropertyRef Name="COUR_ID" />
+    </Key>
+    <Property Name="COUR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COUR_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="COUR_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="COUR_DESCRIPTION" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="COUR_SEMESTER" Type="Int32" Nullable="false" />
+    <Property Name="COUR_HOUR" Type="Int32" Nullable="false" />
+    <Property Name="COUR_DEPARTMENTID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DEPARTMENT" Relationship="CourseSchedulerModel.FK_COURSE_DEPARTMENT" FromRole="COURSE" ToRole="DEPARTMENT" />
+    <NavigationProperty Name="DEPARTMENTCOURSE" Relationship="CourseSchedulerModel.FK_DEPARTMENTCOURSE_COURSE" FromRole="COURSE" ToRole="DEPARTMENTCOURSE" />
+    <NavigationProperty Name="SECTION" Relationship="CourseSchedulerModel.FK_SECTION_COURSE" FromRole="COURSE" ToRole="SECTION" />
+  </EntityType>
+  <EntityType Name="DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DEPA_ID" />
+    </Key>
+    <Property Name="DEPA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEPA_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DEPA_FACULTYID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="COURSE" Relationship="CourseSchedulerModel.FK_COURSE_DEPARTMENT" FromRole="DEPARTMENT" ToRole="COURSE" />
+    <NavigationProperty Name="FACULTY" Relationship="CourseSchedulerModel.FK_DEPARTMENT_FACULTY" FromRole="DEPARTMENT" ToRole="FACULTY" />
+    <NavigationProperty Name="DEPARTMENTCOURSE" Relationship="CourseSchedulerModel.FK_DEPARTMENTCOURSE_DEPARTMENT" FromRole="DEPARTMENT" ToRole="DEPARTMENTCOURSE" />
+  </EntityType>
+  <EntityType Name="DEPARTMENTCOURSE">
+    <Key>
+      <PropertyRef Name="DECO_ID" />
+    </Key>
+    <Property Name="DECO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DECO_DEPARTMENTID" Type="Int32" Nullable="false" />
+    <Property Name="DECO_COURSEID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="COURSE" Relationship="CourseSchedulerModel.FK_DEPARTMENTCOURSE_COURSE" FromRole="DEPARTMENTCOURSE" ToRole="COURSE" />
+    <NavigationProperty Name="DEPARTMENT" Relationship="CourseSchedulerModel.FK_DEPARTMENTCOURSE_DEPARTMENT" FromRole="DEPARTMENTCOURSE" ToRole="DEPARTMENT" />
+  </EntityType>
+  <EntityType Name="FACULTY">
+    <Key>
+      <PropertyRef Name="FACU_ID" />
+    </Key>
+    <Property Name="FACU_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FACU_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="CLASSROOM" Relationship="CourseSchedulerModel.FK_CLASSROOM_FACULTY" FromRole="FACULTY" ToRole="CLASSROOM" />
+    <NavigationProperty Name="DEPARTMENT" Relationship="CourseSchedulerModel.FK_DEPARTMENT_FACULTY" FromRole="FACULTY" ToRole="DEPARTMENT" />
+  </EntityType>
+  <EntityType Name="PROFESSOR">
+    <Key>
+      <PropertyRef Name="PROF_ID" />
+    </Key>
+    <Property Name="PROF_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROF_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PROFESSORSECTION" Relationship="CourseSchedulerModel.FK_PROFESSORSECTION_PROFESSOR" FromRole="PROFESSOR" ToRole="PROFESSORSECTION" />
+  </EntityType>
+  <EntityType Name="PROFESSORSECTION">
+    <Key>
+      <PropertyRef Name="PRSE_ID" />
+    </Key>
+    <Property Name="PRSE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRSE_PROFESSORID" Type="Int32" Nullable="false" />
+    <Property Name="PRSE_SECTIONID" Type="Int32" Nullable="false" />
+    <Property Name="PRSE_DAY" Type="Int32" Nullable="false" />
+    <Property Name="PRSE_HOUR" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PROFESSOR" Relationship="CourseSchedulerModel.FK_PROFESSORSECTION_PROFESSOR" FromRole="PROFESSORSECTION" ToRole="PROFESSOR" />
+    <NavigationProperty Name="SECTION" Relationship="CourseSchedulerModel.FK_PROFESSORSECTION_SECTION" FromRole="PROFESSORSECTION" ToRole="SECTION" />
+  </EntityType>
+  <EntityType Name="SECTION">
+    <Key>
+      <PropertyRef Name="SECT_ID" />
+    </Key>
+    <Property Name="SECT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SECT_COURSEID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="COURSE" Relationship="CourseSchedulerModel.FK_SECTION_COURSE" FromRole="SECTION" ToRole="COURSE" />
+    <NavigationProperty Name="PROFESSORSECTION" Relationship="CourseSchedulerModel.FK_PROFESSORSECTION_SECTION" FromRole="SECTION" ToRole="PROFESSORSECTION" />
+  </EntityType>
+  <Association Name="FK_CLASSROOM_FACULTY">
+    <End Role="FACULTY" Type="CourseSchedulerModel.FACULTY" Multiplicity="1" />
+    <End Role="CLASSROOM" Type="CourseSchedulerModel.CLASSROOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACULTY">
+        <PropertyRef Name="FACU_ID" />
+      </Principal>
+      <Dependent Role="CLASSROOM">
+        <PropertyRef Name="CLRO_FACULTYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COURSE_DEPARTMENT">
+    <End Role="DEPARTMENT" Type="CourseSchedulerModel.DEPARTMENT" Multiplicity="1" />
+    <End Role="COURSE" Type="CourseSchedulerModel.COURSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENT">
+        <PropertyRef Name="DEPA_ID" />
+      </Principal>
+      <Dependent Role="COURSE">
+        <PropertyRef Name="COUR_DEPARTMENTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPARTMENTCOURSE_COURSE">
+    <End Role="COURSE" Type="CourseSchedulerModel.COURSE" Multiplicity="1" />
+    <End Role="DEPARTMENTCOURSE" Type="CourseSchedulerModel.DEPARTMENTCOURSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COURSE">
+        <PropertyRef Name="COUR_ID" />
+      </Principal>
+      <Dependent Role="DEPARTMENTCOURSE">
+        <PropertyRef Name="DECO_COURSEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SECTION_COURSE">
+    <End Role="COURSE" Type="CourseSchedulerModel.COURSE" Multiplicity="1" />
+    <End Role="SECTION" Type="CourseSchedulerModel.SECTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COURSE">
+        <PropertyRef Name="COUR_ID" />
+      </Principal>
+      <Dependent Role="SECTION">
+        <PropertyRef Name="SECT_COURSEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPARTMENT_FACULTY">
+    <End Role="FACULTY" Type="CourseSchedulerModel.FACULTY" Multiplicity="1" />
+    <End Role="DEPARTMENT" Type="CourseSchedulerModel.DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACULTY">
+        <PropertyRef Name="FACU_ID" />
+      </Principal>
+      <Dependent Role="DEPARTMENT">
+        <PropertyRef Name="DEPA_FACULTYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPARTMENTCOURSE_DEPARTMENT">
+    <End Role="DEPARTMENT" Type="CourseSchedulerModel.DEPARTMENT" Multiplicity="1" />
+    <End Role="DEPARTMENTCOURSE" Type="CourseSchedulerModel.DEPARTMENTCOURSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENT">
+        <PropertyRef Name="DEPA_ID" />
+      </Principal>
+      <Dependent Role="DEPARTMENTCOURSE">
+        <PropertyRef Name="DECO_DEPARTMENTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROFESSORSECTION_PROFESSOR">
+    <End Role="PROFESSOR" Type="CourseSchedulerModel.PROFESSOR" Multiplicity="1" />
+    <End Role="PROFESSORSECTION" Type="CourseSchedulerModel.PROFESSORSECTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFESSOR">
+        <PropertyRef Name="PROF_ID" />
+      </Principal>
+      <Dependent Role="PROFESSORSECTION">
+        <PropertyRef Name="PRSE_PROFESSORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROFESSORSECTION_SECTION">
+    <End Role="SECTION" Type="CourseSchedulerModel.SECTION" Multiplicity="1" />
+    <End Role="PROFESSORSECTION" Type="CourseSchedulerModel.PROFESSORSECTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECTION">
+        <PropertyRef Name="SECT_ID" />
+      </Principal>
+      <Dependent Role="PROFESSORSECTION">
+        <PropertyRef Name="PRSE_SECTIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CourseSchedulerModelStoreContainer" CdmEntityContainer="CourseSchedulerEntities">
+    <EntitySetMapping Name="CLASSROOM">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.CLASSROOM">
+        <MappingFragment StoreEntitySet="CLASSROOM">
+          <ScalarProperty Name="CLRO_ID" ColumnName="CLRO_ID" />
+          <ScalarProperty Name="CLRO_NAME" ColumnName="CLRO_NAME" />
+          <ScalarProperty Name="CLRO_FACULTYID" ColumnName="CLRO_FACULTYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COURSE">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.COURSE">
+        <MappingFragment StoreEntitySet="COURSE">
+          <ScalarProperty Name="COUR_ID" ColumnName="COUR_ID" />
+          <ScalarProperty Name="COUR_CODE" ColumnName="COUR_CODE" />
+          <ScalarProperty Name="COUR_NAME" ColumnName="COUR_NAME" />
+          <ScalarProperty Name="COUR_DESCRIPTION" ColumnName="COUR_DESCRIPTION" />
+          <ScalarProperty Name="COUR_SEMESTER" ColumnName="COUR_SEMESTER" />
+          <ScalarProperty Name="COUR_HOUR" ColumnName="COUR_HOUR" />
+          <ScalarProperty Name="COUR_DEPARTMENTID" ColumnName="COUR_DEPARTMENTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTMENT">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.DEPARTMENT">
+        <MappingFragment StoreEntitySet="DEPARTMENT">
+          <ScalarProperty Name="DEPA_ID" ColumnName="DEPA_ID" />
+          <ScalarProperty Name="DEPA_NAME" ColumnName="DEPA_NAME" />
+          <ScalarProperty Name="DEPA_FACULTYID" ColumnName="DEPA_FACULTYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTMENTCOURSE">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.DEPARTMENTCOURSE">
+        <MappingFragment StoreEntitySet="DEPARTMENTCOURSE">
+          <ScalarProperty Name="DECO_ID" ColumnName="DECO_ID" />
+          <ScalarProperty Name="DECO_DEPARTMENTID" ColumnName="DECO_DEPARTMENTID" />
+          <ScalarProperty Name="DECO_COURSEID" ColumnName="DECO_COURSEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACULTY">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.FACULTY">
+        <MappingFragment StoreEntitySet="FACULTY">
+          <ScalarProperty Name="FACU_ID" ColumnName="FACU_ID" />
+          <ScalarProperty Name="FACU_NAME" ColumnName="FACU_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROFESSOR">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.PROFESSOR">
+        <MappingFragment StoreEntitySet="PROFESSOR">
+          <ScalarProperty Name="PROF_ID" ColumnName="PROF_ID" />
+          <ScalarProperty Name="PROF_NAME" ColumnName="PROF_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROFESSORSECTION">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.PROFESSORSECTION">
+        <MappingFragment StoreEntitySet="PROFESSORSECTION">
+          <ScalarProperty Name="PRSE_ID" ColumnName="PRSE_ID" />
+          <ScalarProperty Name="PRSE_PROFESSORID" ColumnName="PRSE_PROFESSORID" />
+          <ScalarProperty Name="PRSE_SECTIONID" ColumnName="PRSE_SECTIONID" />
+          <ScalarProperty Name="PRSE_DAY" ColumnName="PRSE_DAY" />
+          <ScalarProperty Name="PRSE_HOUR" ColumnName="PRSE_HOUR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECTION">
+      <EntityTypeMapping TypeName="CourseSchedulerModel.SECTION">
+        <MappingFragment StoreEntitySet="SECTION">
+          <ScalarProperty Name="SECT_ID" ColumnName="SECT_ID" />
+          <ScalarProperty Name="SECT_COURSEID" ColumnName="SECT_COURSEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
