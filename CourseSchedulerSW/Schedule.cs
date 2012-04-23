@@ -13,9 +13,18 @@ namespace CourseSchedulerSW
         public int endHour { get; set; }
         public int whichDay { get; set; }
 
-        public Schedule()
+        public Schedule(Section sec, Classroom clas, int start, int end, int day)
         {
-            
+            section = sec;
+            classroom = clas;
+            startHour = start;
+            endHour = end;
+            whichDay = day;
+        }
+
+        public int calcDuration()
+        {
+            return endHour - startHour;
         }
 
         private bool mutateHour()
@@ -24,10 +33,10 @@ namespace CourseSchedulerSW
             try
             {
                 Random rnd = new Random();
-                int length = endHour - startHour;
-                newHour = rnd.Next(section.whichCourse.department.dayStartTime, section.whichCourse.department.dayEndTime - length);
+                int duration = endHour - startHour;
+                newHour = rnd.Next(section.whichCourse.department.dayStartTime, section.whichCourse.department.dayEndTime - duration);
                 startHour = newHour;
-                endHour = newHour + length;
+                endHour = newHour + duration;
                 return true;
             }
             catch (Exception)

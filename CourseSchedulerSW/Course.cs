@@ -7,7 +7,7 @@ namespace CourseSchedulerSW
 {
     public class Course
     {
-        public Department department { get;}
+        public Department department { get; }
         private List<Section> ListSection;
         private String Name;
         private int fitness;

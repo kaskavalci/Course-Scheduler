@@ -10,18 +10,7 @@ namespace CourseSchedulerSW
         private List<Curriculum> ListCurriculum;
         public int dayStartTime { get; }
         public int dayEndTime { get; }
-
-        public Faculty Faculty
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-
-            }
-        }
+        public Faculty faculty { get; }
 
         /* eger section saati güne sığmıyorsa bölmemiz lazım */
         private bool initCurriculum()
@@ -30,6 +19,18 @@ namespace CourseSchedulerSW
         }
 
         private bool processCurriculum()
+        {
+            return false;
+        }
+
+        /* one curriculum to rule them all */
+        public Curriculum ChooseCurriculum()
+        {
+            return null;
+        }
+
+        /* during iterations, choose the population that will survive */
+        private bool refinePopulation()
         {
             return false;
         }
@@ -93,17 +94,6 @@ namespace CourseSchedulerSW
                 return false;
             }
         }
-
-        private bool ChooseCurriculum()
-        {
-            return false;
-        }
-
-        private bool ChooseIndividuals()
-        {
-            return false;
-        }
-
 
     }
 }
