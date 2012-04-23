@@ -8,8 +8,8 @@ namespace CourseSchedulerSW
     public class Department
     {
         private List<Curriculum> ListCurriculum;
-        static public int dayStartTime;
-        static public int dayEndTime;
+        public int dayStartTime { get; }
+        public int dayEndTime { get; }
 
         public Faculty Faculty
         {

@@ -8,7 +8,7 @@ namespace CourseSchedulerSW
     public class Section
     {
         private int ID;
-        private Course whichCourse;
+        public Course whichCourse { get;}
         private int numHours;
         private Proffesor Instructor;
         private int prefferedHour;

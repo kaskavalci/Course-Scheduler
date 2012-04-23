@@ -13,25 +13,42 @@ namespace CourseSchedulerSW
         public int endHour { get; set; }
         public int whichDay { get; set; }
 
+        public Schedule()
+        {
+            
+        }
+
         private bool mutateHour()
         {
             int newHour;
             try
             {
                 Random rnd = new Random();
-                newHour = rnd.Next(9, 18);
+                int length = endHour - startHour;
+                newHour = rnd.Next(section.whichCourse.department.dayStartTime, section.whichCourse.department.dayEndTime - length);
+                startHour = newHour;
+                endHour = newHour + length;
+                return true;
             }
             catch (Exception)
             {
-
-                throw;
+                return false;
             }
-            return false;
         }
 
         private bool mutateClassroom()
         {
-            return false;
+            try
+            {
+                Random rnd = new Random();
+                int index = rnd.Next(0, classroom.faculty.ClassroomList.Count - 1);
+                classroom = classroom.faculty.ClassroomList[index];
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

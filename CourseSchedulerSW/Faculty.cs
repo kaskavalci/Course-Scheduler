@@ -8,7 +8,7 @@ namespace CourseSchedulerSW
     public class Faculty
     {
         string Name;
-        List<Department> DepartmentList;
-        List<Classroom> ClassroomList;
+        public List<Department> DepartmentList { get; }
+        public List<Classroom> ClassroomList { get; }
     }
 }
